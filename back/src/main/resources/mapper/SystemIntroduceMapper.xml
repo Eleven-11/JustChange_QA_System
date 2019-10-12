@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heeexy.example.dao.SystemIntroduceMapper">
+  <resultMap id="BaseResultMap" type="com.heeexy.example.util.model.SystemIntroduce">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="system_introduce_picture" jdbcType="VARCHAR" property="systemIntroducePicture" />
+    <result column="introduct_content" jdbcType="VARCHAR" property="introductContent" />
+    <result column="first_column" jdbcType="VARCHAR" property="firstColumn" />
+    <result column="first_column_content" jdbcType="VARCHAR" property="firstColumnContent" />
+    <result column="second_column" jdbcType="VARCHAR" property="secondColumn" />
+    <result column="second_column_content" jdbcType="VARCHAR" property="secondColumnContent" />
+    <result column="final_column" jdbcType="VARCHAR" property="finalColumn" />
+    <result column="final_column_content" jdbcType="VARCHAR" property="finalColumnContent" />
+  </resultMap>
+</mapper>
