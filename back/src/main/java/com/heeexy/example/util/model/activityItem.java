@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_activity_item")
-public class activityItem {
+public class ActivityItem {
     /**
      * 活动明细表主键
      */

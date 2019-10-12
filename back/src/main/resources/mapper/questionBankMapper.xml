@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.heeexy.example.dao.questionBankMapper">
-  <resultMap id="BaseResultMap" type="com.heeexy.example.util.model.questionBank">
+<mapper namespace="com.heeexy.example.dao.QuestionBankMapper">
+  <resultMap id="BaseResultMap" type="com.heeexy.example.util.model.QuestionBank">
     <!--
       WARNING - @mbg.generated
     -->
@@ -10,4 +10,49 @@
     <result column="state" jdbcType="VARCHAR" property="state" />
     <result column="is_del" jdbcType="BIT" property="isDel" />
   </resultMap>
+
+    <!--查询全部题库-->
+    <select id="listQuestionBank" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT
+        w.id                                      id,
+        w.question_bank_name                      question_bank_name,
+        w.state                                   state,
+        w.is_del                                  is_del
+        FROM t_question_bank w
+        <where>
+            <if test="question_bank_name !=null and question_bank_name !=''">
+                and question_bank_name  like concat('%',#{question_bank_name},'%')
+            </if>
+        </where>
+        ORDER BY w.id DESC
+        LIMIT #{offSet}, #{pageRow}
+    </select>
+<!--添加题库-->
+    <insert id="addQuestionBank" parameterType="com.alibaba.fastjson.JSONObject" useGeneratedKeys="true" keyProperty="questionBankId">
+        INSERT INTO t_question_bank
+            (question_bank_name,state,is_del)
+        VALUES
+            (#{question_bank_name},#{state},#{is_del})
+    </insert>
+<!--添加试卷-->
+    <insert id="addExaminationPaper" parameterType="com.alibaba.fastjson.JSONObject" useGeneratedKeys="true" keyProperty="examinationPaperId">
+        INSERT INTO t_examination_paper
+            (question_bank_id,examination_name,is_del)
+        VALUES
+            (#{questionBankId},#{examination_name},#{is_del})
+    </insert>
+<!--统计题库数量-->
+    <select id="countQuestionBank" resultType="Integer">
+        SELECT count(0)
+        FROM t_question_bank w
+    </select>
+
+<!--修改题库-->
+    <update id="updateQuestionBank" parameterType="com.alibaba.fastjson.JSONObject">
+        UPDATE t_question_bank
+        SET
+            question_bank_name = #{question_bank_name},state=#{state},is_del=#{is_del}
+        WHERE id = #{id}
+    </update>
+
 </mapper>

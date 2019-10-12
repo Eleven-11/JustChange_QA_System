@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_user_score")
-public class userScore {
+public class UserScore {
     @Id
     private Integer id;
 

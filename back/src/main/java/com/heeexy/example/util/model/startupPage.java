@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_startup_page")
-public class startupPage {
+public class StartupPage {
     /**
      * 启动页主键
      */

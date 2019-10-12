@@ -3,7 +3,7 @@ package com.heeexy.example.util.model;
 import javax.persistence.*;
 
 @Table(name = "t_type")
-public class type {
+public class Type {
     @Id
     private Integer id;
 

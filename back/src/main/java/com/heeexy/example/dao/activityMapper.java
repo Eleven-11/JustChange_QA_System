@@ -1,7 +1,7 @@
 package com.heeexy.example.dao;
 
-import com.heeexy.example.util.model.activity;
+import com.heeexy.example.util.model.Activity;
 import tk.mybatis.mapper.common.Mapper;
 
-public interface activityMapper extends Mapper<activity> {
+public interface ActivityMapper extends Mapper<Activity> {
 }

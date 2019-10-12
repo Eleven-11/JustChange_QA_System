@@ -1,7 +1,7 @@
 package com.heeexy.example.dao;
 
-import com.heeexy.example.util.model.questionLabel;
+import com.heeexy.example.util.model.QuestionLabel;
 import tk.mybatis.mapper.common.Mapper;
 
-public interface questionLabelMapper extends Mapper<questionLabel> {
+public interface QuestionLabelMapper extends Mapper<QuestionLabel> {
 }

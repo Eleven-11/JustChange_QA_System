@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_user_attend")
-public class userAttend {
+public class UserAttend {
     /**
      * 签到表主键
      */

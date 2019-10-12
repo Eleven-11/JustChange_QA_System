@@ -3,7 +3,7 @@ package com.heeexy.example.util.model;
 import javax.persistence.*;
 
 @Table(name = "t_examination_paper")
-public class examinationPaper {
+public class ExaminationPaper {
     /**
      * 题库章节表主键
      */

@@ -3,7 +3,7 @@ package com.heeexy.example.util.model;
 import javax.persistence.*;
 
 @Table(name = "t_question_option")
-public class questionOption {
+public class QuestionOption {
     /**
      * 题目分值表主键
      */

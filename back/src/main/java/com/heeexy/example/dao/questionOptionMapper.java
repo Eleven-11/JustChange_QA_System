@@ -1,7 +1,7 @@
 package com.heeexy.example.dao;
 
-import com.heeexy.example.util.model.questionOption;
+import com.heeexy.example.util.model.QuestionOption;
 import tk.mybatis.mapper.common.Mapper;
 
-public interface questionOptionMapper extends Mapper<questionOption> {
+public interface QuestionOptionMapper extends Mapper<QuestionOption> {
 }

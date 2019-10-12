@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_banner")
-public class banner {
+public class Banner {
     /**
      * 滚动栏id
      */

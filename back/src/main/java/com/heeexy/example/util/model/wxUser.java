@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_wx_user")
-public class wxUser {
+public class WxUser {
     /**
      * 系统用户ID
      */

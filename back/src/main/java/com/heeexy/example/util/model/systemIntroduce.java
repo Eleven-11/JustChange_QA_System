@@ -3,7 +3,7 @@ package com.heeexy.example.util.model;
 import javax.persistence.*;
 
 @Table(name = "t_system_introduce")
-public class systemIntroduce {
+public class SystemIntroduce {
     /**
      * 课程体系介绍
      */

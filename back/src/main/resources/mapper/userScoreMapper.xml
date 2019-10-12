@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.heeexy.example.dao.userScoreMapper">
-  <resultMap id="BaseResultMap" type="com.heeexy.example.util.model.userScore">
+<mapper namespace="com.heeexy.example.dao.UserScoreMapper">
+  <resultMap id="BaseResultMap" type="com.heeexy.example.util.model.UserScore">
     <!--
       WARNING - @mbg.generated
     -->
