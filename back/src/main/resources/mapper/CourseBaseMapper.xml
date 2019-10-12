@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heeexy.example.dao.CourseBaseMapper">
+    <resultMap id="BaseResultMap" type="com.heeexy.example.util.model.CourseBase">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="course_name" jdbcType="VARCHAR" property="courseName" />
+        <result column="course_type" jdbcType="INTEGER" property="courseType" />
+        <result column="course_picture" jdbcType="VARCHAR" property="coursePicture" />
+        <result column="state" jdbcType="VARCHAR" property="state" />
+        <result column="is_del" jdbcType="BIT" property="isDel" />
+        <result column="summary" jdbcType="LONGVARCHAR" property="summary" />
+    </resultMap>
+
+
+  <insert id="addCourseBase" keyProperty="courseBaseId" parameterType="com.alibaba.fastjson.JSONObject" useGeneratedKeys="true">
+        INSERT INTO t_course_base
+            (course_name,course_picture,summary,state)
+        VALUES
+            (#{course_name},#{course_picture},#{summary},#{state})
+    </insert>
+
+  <select id="countCourseBase" resultType="Integer">
+        SELECT count(0)
+        FROM t_course_base w
+    </select>
+
+  <select id="listCourseBase" resultType="com.alibaba.fastjson.JSONObject">
+    SELECT
+    w.id                                      id,
+    w.course_name                             course_name,
+    w.course_type                             course_type,
+    w.course_picture                          course_prcture,
+    w.summary                                 summary,
+    w.state                                   state
+    FROM t_course_base w
+    <where>
+      <if test="course_name !=null and course_name !=''">
+        and course_name  like concat('%',#{course_name},'%')
+      </if>
+      <if test="course_type !=null and course_type !=''">
+        and course_type  like concat('%',#{course_type},'%')
+      </if>
+    </where>
+    ORDER BY w.id DESC
+    LIMIT #{offSet}, #{pageRow}
+  </select>
+
+  <update id="updateCourseBase" parameterType="com.alibaba.fastjson.JSONObject">
+        UPDATE t_course_base
+        SET
+            course_name = #{course_name},course_picture=#{course_picture},summary=#{summary},state=#{state}
+        WHERE id = #{id}
+    </update>
+</mapper>
